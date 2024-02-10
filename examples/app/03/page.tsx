@@ -1,5 +1,6 @@
 'use client'
 import React, {useState} from 'react';
+import ExampleArr from './arr';
 
 function Component() {
 
@@ -37,13 +38,20 @@ function Component() {
     }
 
     const handleAge = () => {
-        setAge0();
+        // setAge0();
+        setAge1();
     }
 
     const setAge0 = () => {
         console.log(person);//{name:'puxiao',age:34}
         // @ts-ignore
         setPerson({age: 18});
+        console.log(person);//{age:18}
+    }
+
+    const setAge1 = () => {
+        console.log(person);//{name:'puxiao',age:34}
+        setPerson({...person,age:18});
         console.log(person);//{age:18}
     }
 
@@ -56,6 +64,10 @@ function Component() {
         <button onClick={handleAge}>
             age: {person.age}
         </button>
+
+        <br/>
+
+        <ExampleArr/>
         
     </>
 }
